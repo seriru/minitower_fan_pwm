@@ -39,9 +39,6 @@ int main (void) {
     
       systemp_c = millidegrees / 1000;
 
-      if(DEBUG)
-	printf("CPU temperature is %3.1fC\n", systemp_c);
-      
       if(systemp_c < 48.0) {
 	fan_speed = 0;
       }
@@ -60,8 +57,10 @@ int main (void) {
       
       softPwmWrite(fan_pwm_pin, fan_speed);
       
-      if(DEBUG)
-	printf("Fan speed at %i.\n", fan_speed);
+      if(DEBUG) {
+	printf("CPU temperature is %3.1fC\n", systemp_c);
+      	printf("Fan speed at %i.\n", fan_speed);
+      }
     }
     
     delay(5000);
