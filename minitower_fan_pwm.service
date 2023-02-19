@@ -1,0 +1,13 @@
+[Unit]
+Description=Minitower Fan PWM Service
+
+[Service]
+User=root
+Type=simple
+ExecStart=/usr/local/bin/fan_pwm
+RemainAfterExit=yes
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
