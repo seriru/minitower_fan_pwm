@@ -14,7 +14,7 @@ const int fan_pwm_pin = 15;   /* GPIO 15 as per WiringPi, GPIO14 as per BCM */
 
 int main (void) {
   float millidegrees;
-  float systemp_c;
+  float cpu_temp_c;
   int fan_speed = 50;
   FILE* thermal;
   
@@ -37,28 +37,28 @@ int main (void) {
       fscanf(thermal, "%f", &millidegrees);
       fclose(thermal);
     
-      systemp_c = millidegrees / 1000;
+      cpu_temp_c = millidegrees / 1000;
 
-      if(systemp_c < 48.0) {
+      if(cpu_temp_c < 48.0) {
 	fan_speed = 0;
       }
-      else if(systemp_c >= 48.0 && systemp_c < 52.0) {
+      else if(cpu_temp_c >= 48.0 && cpu_temp_c < 52.0) {
 	fan_speed = 50;
       }
-      else if(systemp_c >= 52.0 && systemp_c < 56.0) {
+      else if(cpu_temp_c >= 52.0 && cpu_temp_c < 56.0) {
 	fan_speed = 65;
       }
-      else if(systemp_c >= 56.0 && systemp_c < 60.0) {
+      else if(cpu_temp_c >= 56.0 && cpu_temp_c < 60.0) {
 	fan_speed = 80;
       }
-      else { /* systemp_c >= 60.0 */
+      else { /* cpu_temp_c >= 60.0 */
 	fan_speed = 100;
       }
       
       softPwmWrite(fan_pwm_pin, fan_speed);
       
       if(DEBUG) {
-	printf("CPU temperature is %3.1fC\n", systemp_c);
+	printf("CPU temperature is %3.1fC\n", cpu_temp_c);
       	printf("Fan speed at %i.\n", fan_speed);
       }
     }
