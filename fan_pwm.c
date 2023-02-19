@@ -13,7 +13,6 @@
 const int fan_pwm_pin = 15;   /* GPIO 15 as per WiringPi, GPIO14 as per BCM */
 
 int main (void) {
-  int intensity;            
   float millidegrees;
   float systemp_c;
   FILE* thermal;
