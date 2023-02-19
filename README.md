@@ -12,7 +12,8 @@ gcc fan_pwm.c -o fan_pwm -lwiringPi -lpthread
 Copy the compiled binary to /usr/local/bin/ and the service file to
 /lib/systemd/system/.
 
-sudo systemctl enable minitower_fan_pwm
-sudo systemctl start minitower_fan_pwm
+sudo systemctl enable minitower_fan_pwm && sudo systemctl start minitower_fan_pwm
+
+
 
 
