@@ -1,6 +1,6 @@
 # Description
-This repo contains C program that controls the fan speed of [52Pi's ZP-0130
-Mini Tower NAS Kit](https://wiki.52pi.com/index.php?title=ZP-0130) for the Raspberry Pi 4b SBC.
+This repo contains a C program that controls the fan speed of the
+[52Pi's ZP-0130 Mini Tower NAS Kit](https://wiki.52pi.com/index.php?title=ZP-0130) for the Raspberry Pi 4b SBC.
 
 # Compilation
 The code requires the [WiringPi API](https://github.com/WiringPi/WiringPi/releases/).
